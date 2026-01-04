@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Study Timer</title>
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study Timer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="clock-box">
+    <h1>📘</h1>
+    <h2 id="mode">Study Time</h2>
+    <div id="time">50:00</div>
 
-<div class="clock-box">
-  <h1>📘</h1>
-  <h2 id="mode">Study Time</h2>
-  <div id="time">50:00</div>
+    <div class="buttons">
+      <button onclick="start()">Start</button>
+      <button onclick="pause()">Pause</button>
+      <button onclick="reset()">Reset</button>
+    </div>
 
-  <div class="buttons">
-    <button onclick="start()">Start</button>
-    <button onclick="pause()">Pause</button>
-    <button onclick="reset()">Reset</button>
+    <div class="spotify-box">
+      <input
+        id="spotifyLink"
+        placeholder="Paste Spotify link (track / playlist / album)"
+        aria-label="Spotify link input"
+      />
+      <button onclick="loadSpotify()">Load Music</button>
+    </div>
+
+    <iframe
+      id="spotifyPlayer"
+      allow="encrypted-media"
+      loading="lazy"
+      title="Spotify Player"
+    ></iframe>
   </div>
 
-  <div class="spotify-box">
-    <input id="spotifyLink" placeholder="Paste Spotify link (track / playlist)">
-    <button onclick="loadSpotify()">Load Music</button>
-  </div>
-
-  <iframe
-    id="spotifyPlayer"
-    allow="encrypted-media"
-    loading="lazy">
-  </iframe>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
