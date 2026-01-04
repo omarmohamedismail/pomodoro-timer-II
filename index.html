@@ -8,49 +8,29 @@
 </head>
 <body>
 
-<main class="app">
-  <h1 id="emoji">📘</h1>
+<div class="clock-box">
+  <h1>📘</h1>
   <h2 id="mode">Study Time</h2>
   <div id="time">50:00</div>
 
-  <div class="controls">
-    <button id="start">▶</button>
-    <button id="pause">⏸</button>
-    <button id="reset">🔄</button>
-    <button id="fullscreen">⛶</button>
+  <div class="buttons">
+    <button onclick="start()">Start</button>
+    <button onclick="pause()">Pause</button>
+    <button onclick="reset()">Reset</button>
   </div>
 
-  <section class="settings">
-    <label>Study (min)
-      <input type="number" id="studyInput" min="10" value="50">
-    </label>
+  <div class="spotify-box">
+    <input id="spotifyLink" placeholder="Paste Spotify link here">
+    <button onclick="loadSpotify()">Load Music</button>
+  </div>
 
-    <label>Break (min)
-      <input type="number" id="breakInput" min="5" value="10">
-    </label>
+  <iframe
+    id="spotifyPlayer"
+    allow="encrypted-media"
+    loading="lazy">
+  </iframe>
+</div>
 
-    <label>Theme
-      <input type="color" id="themeColor">
-    </label>
-
-    <label>Emoji
-      <select id="emojiPicker">
-        <option>📘</option>
-        <option>📚</option>
-        <option>🧠</option>
-        <option>🔥</option>
-        <option>☕</option>
-      </select>
-    </label>
-  </section>
-
-  <section class="spotify">
-    <button id="spotifyLogin">🎵 Connect Spotify</button>
-    <div id="spotifyStatus">No music playing</div>
-  </section>
-</main>
-
-<script src="spotify.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
