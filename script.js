@@ -58,8 +58,9 @@ function loadSpotify() {
 
   const type = match[1];
   const id = match[2];
+  const embedUrl = `https://open.spotify.com/embed/${type}/${id}`;
 
-  player.src = `https://open.spotify.com/embed/${type}/${id}`;
+  player.src = embedUrl;
 }
 
 // Initialize display
