@@ -40,19 +40,19 @@ function reset() {
   update();
 }
 
-/* 🔥 THIS IS THE IMPORTANT FIX */
+/* Spotify embed loader */
 function loadSpotify() {
   const input = document.getElementById("spotifyLink").value.trim();
   if (!input) return;
 
-  // Remove query params
+  // Remove query params (?si=...)
   const clean = input.split("?")[0];
 
-  // Extract type + id
+  // Match type and ID (track, playlist, album)
   const match = clean.match(/open\.spotify\.com\/(track|playlist|album)\/([a-zA-Z0-9]+)/);
 
   if (!match) {
-    alert("Invalid Spotify link");
+    alert("Please enter a valid Spotify track, playlist, or album link.");
     return;
   }
 
@@ -62,4 +62,5 @@ function loadSpotify() {
   player.src = `https://open.spotify.com/embed/${type}/${id}`;
 }
 
+// Initialize display
 update();
